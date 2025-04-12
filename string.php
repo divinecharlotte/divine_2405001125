@@ -2,19 +2,30 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Registration Info</title>
+    <title>String Tools</title>
+
 </head>
 <body>
-    <h1>Student Registration</h1>
+<div>
+  <?php
+        $text = "Charlotte built PHP";
+        $search = "PHP";
 
-    <p>
-        <?php
-            $registrationNumber = "2405001125";
-            $customMessage = "Welcome to the Yearly Registration System!";
+        echo "<p><strong>Original string:</strong> <code>$text</code></p>";
+        echo "<p><strong>Lowercase:</strong> " . strtolower($text) . "</p>";
+        echo "<p><strong>Uppercase:</strong> " . strtoupper($text) . "</p>";
+        echo "<p><strong>Character count:</strong> " . strlen($text) . "</p>";
 
-            echo "Registration Number: <strong>$registrationNumber</strong><br>";
-            echo "Message: <em>$customMessage</em>";
-        ?>
-    </p>
+        $pos = strpos($text, $search);
+        if ($pos !== false) {
+            echo "<p><strong>Position of \"$search\":</strong> $pos</p>";
+        } else {
+            echo "<p><strong>\"$search\" not found in the string.</strong></p>";
+        }
+    ?>
+
+     
+    </div>
+
 </body>
 </html>
